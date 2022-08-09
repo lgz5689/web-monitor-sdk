@@ -1,6 +1,8 @@
+import { setAppid } from './config'
+
 const app = {
-  init() {
-    console.log('init success')
+  init(appid: string) {
+    setAppid(appid)
   },
 }
 
