@@ -14,7 +14,7 @@ export const error = () => {
         resourceUrl: e.target.src || e.target.href,
         resourceHtml: e.target.outerHTML,
         resourceType: e.target.tagName,
-        startTime: performance.now(),
+        startTime: e.timeStamp,
       })
     },
     true
