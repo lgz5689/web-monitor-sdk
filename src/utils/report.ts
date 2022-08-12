@@ -6,16 +6,22 @@ const url = config.url + config.appid
 export const report = (data: any) => {
   const sendBeacon = window.navigator.sendBeacon
 
+  const reportData = {
+    appid: config.appid,
+    reportTime: new Date().getTime(),
+    ...data,
+  }
+
   if (window.requestIdleCallback) {
     window.requestIdleCallback(
       () => {
-        sendBeacon(url, JSON.stringify(data))
+        sendBeacon(url, JSON.stringify(reportData))
       },
       { timeout: 3000 }
     )
   } else {
     setTimeout(() => {
-      sendBeacon(url, JSON.stringify(data))
+      sendBeacon(url, JSON.stringify(reportData))
     })
   }
 }
