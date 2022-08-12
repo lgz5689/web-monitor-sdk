@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    const url = window.location.href
+    const arr = ['mousedown', 'touchstart']
+
+    arr.forEach((item) => {
+      let time
+      window.addEventListener(item, (event) => {
+        clearTimeout(time)
+
+        time = setTimeout(() => {
+          const target = event.target
+          const { top, left } = target?.getBoundingClientRect()
+
+          console.log({
+            type: 'behavior',
+            subType: 'click',
+            eventType: item,
+            pageURL: url,
+            pageHeight: document.documentElement.scrollHeight || document.body.scrollHeight,
+            scrollTop: document.documentElement.scrollTop || document.body.scrollTop,
+            tagName: target?.tagName,
+            paths: event.path?.map((item) => item.tagName).filter(Boolean),
+            startTime: event.timeStamp,
+            outerHTML: target?.outerHTML,
+            innerHTML: target?.innerHTML,
+            position: {
+              top,
+              left,
+            },
+            style: {
+              width: target?.offsetWidth,
+              height: target?.offsetHeight,
+            },
+            viewport: {
+              width: window.innerWidth,
+              height: window.innerHeight,
+            },
+          })
+        }, 500)
+      })
+    })
+  </script>
+</head>
+
+<body style="height: 1000px;">
+  <div style="width: 200px;height: 300px;background: forestgreen  ;">
+    123
+  </div>
+</body>
+
+</html>
