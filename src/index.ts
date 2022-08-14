@@ -1,5 +1,7 @@
 import { setAppid } from './config'
-import { error } from './error/index'
+
+import behavior from './behavior/index'
+import error from './error/index'
 import performance from './performance/index'
 
 const app = {
@@ -9,6 +11,7 @@ const app = {
     }
     setAppid(appid)
 
+    behavior()
     error()
     performance()
   },

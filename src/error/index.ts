@@ -1,6 +1,6 @@
 import { lazyReport } from '../utils/report'
 
-export const error = () => {
+export default function error() {
   const url = window.location.href
 
   // handle resource error
