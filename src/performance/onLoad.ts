@@ -6,6 +6,7 @@ export const onLoad = () => {
   arr.forEach((event) => {
     window.addEventListener(event, () => {
       lazyReport({
+        pageUrl: window.location.href,
         type: 'performance',
         subType: event,
         startTime: performance.now(),

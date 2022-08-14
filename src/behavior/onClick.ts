@@ -17,7 +17,7 @@ export const onClick = () => {
           type: 'behavior',
           subType: 'click',
           eventType: item,
-          pageURL: url,
+          pageUrl: url,
           pageHeight: document.documentElement.scrollHeight || document.body.scrollHeight,
           scrollTop: document.documentElement.scrollTop || document.body.scrollTop,
           tagName: target?.tagName,

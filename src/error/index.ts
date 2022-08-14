@@ -1,6 +1,8 @@
 import { lazyReport } from '../utils/report'
 
 export const error = () => {
+  const url = window.location.href
+
   // handle resource error
   window.addEventListener(
     'error',
@@ -9,7 +11,7 @@ export const error = () => {
 
       if (e.target.src || e.target.href) {
         lazyReport({
-          url: window.location.href,
+          pageUrl: url,
           type: 'error',
           subType: 'resource',
           resourceUrl: e.target.src || e.target.href,
@@ -25,7 +27,7 @@ export const error = () => {
   // handle unhandledrejection
   window.addEventListener('unhandledrejection', (e) => {
     lazyReport({
-      url: window.location.href,
+      pageUrl: url,
       type: 'error',
       subType: 'promise',
       reason: e.reason?.stack,
@@ -36,7 +38,7 @@ export const error = () => {
   // handle js error
   window.onerror = (msg, url, line, column, error) => {
     lazyReport({
-      url,
+      pageUrl: url,
       type: 'error',
       subType: 'js',
       msg,
