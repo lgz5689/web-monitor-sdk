@@ -12,6 +12,7 @@
     arr.forEach((event) => {
       window.addEventListener(event, () => {
         console.log({
+          pageUrl: window.location.href,
           type: 'performance',
           subType: event,
           startTime: performance.now(),

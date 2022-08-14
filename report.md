@@ -282,9 +282,10 @@
 
 ```json
 {
+    "pageUrl": "http://127.0.0.1:5500/examples/performance/onLoad.html",
     "type": "performance",
     "subType": "load",
-    "startTime": 118.10000000149012
+    "startTime": 143.59999999403954
 }
 ```
 
@@ -303,8 +304,9 @@
 
 ```json
 {
+    "pageUrl": "http://127.0.0.1:5500/examples/performance/onLoad.html",
     "type": "performance",
     "subType": "DOMContentLoaded",
-    "startTime": 138.60000000149012
+    "startTime": 117.80000000447035
 }
 ```
