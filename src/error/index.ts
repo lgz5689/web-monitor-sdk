@@ -7,15 +7,17 @@ export const error = () => {
     (e: any) => {
       if (!e.target) return
 
-      lazyReport({
-        url: window.location.href,
-        type: 'error',
-        subType: 'resource',
-        resourceUrl: e.target.src || e.target.href,
-        resourceHtml: e.target.outerHTML,
-        resourceType: e.target.tagName,
-        startTime: e.timeStamp,
-      })
+      if (e.target.src || e.target.href) {
+        lazyReport({
+          url: window.location.href,
+          type: 'error',
+          subType: 'resource',
+          resourceUrl: e.target.src || e.target.href,
+          resourceHtml: e.target.outerHTML,
+          resourceType: e.target.tagName,
+          startTime: e.timeStamp,
+        })
+      }
     },
     true
   )

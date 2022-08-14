@@ -1,4 +1,4 @@
-import { lazyReport } from '../utils/report'
+import { report } from '../utils/report'
 
 export function pageDuration() {
   const url = window.location.href
@@ -6,7 +6,7 @@ export function pageDuration() {
   window.addEventListener(
     'beforeunload',
     () => {
-      lazyReport({
+      report({
         type: 'behavior',
         subType: 'pageDuration',
         pageUrl: url,
