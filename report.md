@@ -310,3 +310,36 @@
     "startTime": 117.80000000447035
 }
 ```
+
+### 1.4.6 fetch
+
+- 请求参数
+
+| 参数名       | 参数说明      | 类型   | 备注            |
+| ------------ | ------------ |-------| --------------- |
+| pageUrl      | 地址         | string |                 |
+| type         | 类型         | string | performance          |
+| subType      | 详细类型     | string | fetch   |
+| startTime    | 开始时间         | number | 毫秒             |
+| endTime      | 结束时间         | number | 毫秒             |
+| duration     | 耗时         | number | 毫秒             |
+| success      | 请求是否成功         | boolean |              |
+| url          | 请求地址        | string |              |
+| method       | 请求方法         | string |              |
+
+- 请求数据
+
+```json
+{
+    "pageUrl": "http://127.0.0.1:5500/examples/performance/onLoad.html",
+    "startTime": 1660745060832,
+    "endTime": 1660745060926,
+    "duration": 94,
+    "status": 200,
+    "success": true,
+    "url": "https://mock.presstime.cn/mock/62fcf50e119c3300714fc01b/example/mock",
+    "method": "GET",
+    "subType": "fetch",
+    "type": "performance"
+}
+```
