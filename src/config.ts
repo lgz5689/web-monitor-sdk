@@ -1,5 +1,5 @@
 const config = {
-  url: 'http://localhost:3000/api/v1/',
+  url: 'http://58j042s457.goho.co:13936/backend/main/insert',
   appid: '',
 }
 

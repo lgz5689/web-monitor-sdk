@@ -1,32 +1,30 @@
 import config from '../config'
 import { addCache, getCache, clearCache } from './cache'
 
-const url = config.url + config.appid
+const { appid, url } = config
 
 export const report = (data: any, isImmediate: boolean = false) => {
-  const sendBeacon = window.navigator.sendBeacon
-
-  const reportData = {
-    appid: config.appid,
+  const reportData = JSON.stringify({
+    appid,
     reportTime: new Date().getTime(),
-    ...data,
-  }
+    data: [...data],
+  })
 
   if (isImmediate) {
-    sendBeacon(config.url, reportData)
+    window.navigator.sendBeacon(url, reportData)
     return
   }
 
   if (window.requestIdleCallback) {
     window.requestIdleCallback(
       () => {
-        sendBeacon(url, JSON.stringify(reportData))
+        window.navigator.sendBeacon(url, reportData)
       },
       { timeout: 3000 }
     )
   } else {
     setTimeout(() => {
-      sendBeacon(url, JSON.stringify(reportData))
+      window.navigator.sendBeacon(url, reportData)
     })
   }
 }
