@@ -99,6 +99,30 @@
 }
 ```
 
+### 1.2.3 用户自定义错误
+
+- 上报参数
+
+| 参数名       | 参数说明      | 类型   | 备注            |
+| ------------ | ------------ |-------| --------------- |
+| pageUrl      | 地址         | string |                 |
+| type         | 类型         | string |  error          |
+| subType      | 详细类型     | string | api               |
+| errorInfo    | 错误信息      | string |                  |
+| error        | 错误对象     | string |  |
+
+- 上报数据
+
+```json
+{
+    "pageUrl": "http://127.0.0.1:5500/examples/error.html",
+    "type": "error",
+    "subType": "api",
+    "errorInfo": "Uncaught Error: test",
+    "error": "Error: test\n    at http://127.0.0.1:5500/examples/error.html:68:11",
+}
+```
+
 ## 1.3 用户行为数据
 
 ### 1.3.1 点击行为
