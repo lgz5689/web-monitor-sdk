@@ -69,7 +69,7 @@
 }
 ```
 
-### 1.2.2 javascript异常
+### 1.2.3 javascript异常
 
 - 上报参数
 
@@ -99,7 +99,7 @@
 }
 ```
 
-### 1.2.3 用户自定义错误
+### 1.2.4 用户自定义错误
 
 - 上报参数
 
@@ -335,7 +335,7 @@
 }
 ```
 
-### 1.4.6 fetch
+### 1.4.6 http监控
 
 - 请求参数
 
@@ -343,7 +343,7 @@
 | ------------ | ------------ |-------| --------------- |
 | pageUrl      | 地址         | string |                 |
 | type         | 类型         | string | performance          |
-| subType      | 详细类型     | string | fetch   |
+| subType      | 详细类型     | string | fetch 或 xhr   |
 | startTime    | 开始时间         | number | 毫秒             |
 | endTime      | 结束时间         | number | 毫秒             |
 | duration     | 耗时         | number | 毫秒             |
