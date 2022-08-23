@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../dist/monitor.js"></script>
+  <script>
+    _monitor.init('6aa6adad')
+  </script>
+</head>
+
+<body>
+  <img src="https://img0.baidu.com/it/u=2366643577,3329386561&fm=253&fmt=auto&app=138&f=JPEG?w=740&h=417" alt="">
+  <img src="http://xxxss.ss.com/a.jpg" alt="">
+  <script>
+    function test () {
+      return Promise.reject(Error('promise'))
+    }
+
+    test()
+
+    _monitor.error('error','自定义错误')
+
+    throw Error('test')
+  </script>
+</body>
+
+</html>
