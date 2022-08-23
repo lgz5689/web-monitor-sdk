@@ -1,6 +1,7 @@
 import typescript from '@rollup/plugin-typescript'
+import { terser } from 'rollup-plugin-terser'
 
-const plugins = [typescript()]
+const plugins = [typescript(), terser()]
 
 export default [
   {
