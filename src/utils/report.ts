@@ -1,9 +1,9 @@
 import config from '../config'
 import { addCache, getCache, clearCache } from './cache'
 
-const { appid, url } = config
-
 export const report = (data: any, isImmediate: boolean = false) => {
+  const { appid, url } = config
+
   const reportData = JSON.stringify({
     appid,
     reportTime: new Date().getTime(),

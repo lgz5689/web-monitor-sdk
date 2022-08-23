@@ -6,12 +6,14 @@ export function pageDuration() {
   window.addEventListener(
     'beforeunload',
     () => {
-      report({
-        type: 'behavior',
-        subType: 'pageDuration',
-        pageUrl: url,
-        duration: performance.now(),
-      })
+      report([
+        {
+          type: 'behavior',
+          subType: 'pageDuration',
+          pageUrl: url,
+          duration: performance.now(),
+        },
+      ])
     },
     true
   )

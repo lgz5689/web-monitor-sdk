@@ -153,7 +153,7 @@
     "type": "behavior",
     "subType": "click",
     "eventType": "mousedown",
-    "pageURL": "http://127.0.0.1:5500/examples/behavior/onClick.html",
+    "pageUrl": "http://127.0.0.1:5500/examples/behavior/onClick.html",
     "pageHeight": 1016,
     "scrollTop": 88,
     "tagName": "DIV",
