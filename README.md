@@ -10,7 +10,7 @@
 ```html
 <script src="../dist/monitor.js"></script>
 <script>
-  // 初始化 填写对应自己的申请的 appid
+  // 初始化 填写appid
   _monitor.init('xxxxxx')
 </script>
 ```
@@ -24,7 +24,7 @@ yarn add kevin-monitor-sdk
 ```javascript
 import _monitor from 'kevin-monitor-sdk'
 
-// 初始化 填写对应自己的申请的 appid
+// 初始化 填写appid
 _monitor.init('xxxxxx')
 ```
 

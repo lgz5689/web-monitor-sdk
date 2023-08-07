@@ -1,8 +1,9 @@
 {
-  "name":"kevin-monitor-sdk",
-  "version": "1.0.0",
+  "name": "kevin-monitor-sdk",
+  "version": "1.0.3",
   "main": "dist/monitor.cjs.js",
   "module": "dist/monitor.esm.js",
+  "types": "./dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lgz5689/web-monitor-sdk"
@@ -44,6 +45,7 @@
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "rollup": "^2.77.2",
+    "rollup-plugin-dts": "^5.1.1",
     "rollup-plugin-terser": "^7.0.2",
     "tslib": "^2.4.0",
     "typescript": "^4.7.4"

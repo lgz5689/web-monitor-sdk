@@ -7,25 +7,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script src="../dist/monitor.js"></script>
+  <link href="./css/bs.css" rel="stylesheet">
   <script>
-    _monitor.init('6aa6adad')
+    _monitor.init({
+      url: 'http://127.0.0.1:7001/report',
+      appid: '123',
+    })
   </script>
 </head>
 
 <body>
-  <img src="https://img0.baidu.com/it/u=2366643577,3329386561&fm=253&fmt=auto&app=138&f=JPEG?w=740&h=417" alt="">
-  <img src="http://xxxss.ss.com/a.jpg" alt="">
   <script>
-    function test () {
-      return Promise.reject(Error('promise'))
+    function errorHttp () {
+      fetch('http://xxxss.ss.com')
+        .catch(() => alert('错误请求已发送'))
     }
 
-    test()
+    function succeesHttp () {
+      alert('正常请求已发送')
+      fetch('http://localhost:7001/')
+    }
 
-    _monitor.error('error','自定义错误')
+    function errorJs () {
+      alert('异常脚本已执行')
+      throw Error('test')
+    }
 
-    throw Error('test')
+    function api () {
+      alert('自定义API已发送')
+      _monitor.error('error', '自定义错误')
+    }
+
+
   </script>
+  <button type="button" class="btn btn-danger" onclick="errorHttp()">发送异常HTTP请求</button>
+  <button type="button" class="btn btn-success" onclick="succeesHttp()">发送正常HTTP请求</button>
+  <button type="button" class="btn btn-warning" onclick="errorJs()">执行异常JS脚本</button>
+  <button type="button" class="btn btn-primary" onclick="api()">发送自定义API请求</button>
+  <hr />
+  <img src="http://xxxss.ss.com/a.jpg" alt="异常静态资源">
 </body>
 
 </html>

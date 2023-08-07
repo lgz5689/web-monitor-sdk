@@ -1,15 +1,21 @@
-import { setAppid } from './config'
+import { setConfig } from './config'
 import { lazyReport } from './utils/report'
 import behavior from './behavior/index'
 import error from './error/index'
 import performance from './performance/index'
 
+interface InitData {
+  url: string
+  appid: string
+  isDev?: boolean
+}
+
 const app = {
-  init(appid: string) {
+  init({ url = 'http://127.0.0.1:7001/report', appid = '', isDev = false }: InitData) {
     if (!window.navigator.sendBeacon) {
       throw Error('sendBeacon is not supported, please use Chrome or Firefox')
     }
-    setAppid(appid)
+    setConfig(url, appid, isDev)
 
     behavior()
     error()

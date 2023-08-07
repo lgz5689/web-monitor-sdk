@@ -3,6 +3,7 @@ import { lazyReport } from '../utils/report'
 const originalFetch = window.fetch
 
 export function handleFetch() {
+  // 替换window对象上的fetch方法
   window.fetch = function newFetch(url, config) {
     const startTime = Date.now()
     const reportData = {

@@ -255,7 +255,7 @@
 | ------------ | ------------ |-------| --------------- |
 | pageUrl      | 地址         | string |                 |
 | type         | 类型         | string | performance          |
-| subType      | 详细类型     | string | first-paint   |
+| subType      | 详细类型     | string | firstPaint   |
 | time         | 时间         | number | 毫秒             |
 
 - 请求数据
@@ -270,6 +270,7 @@
 ```
 
 ### 1.4.3 第一个元素渲染完成fcp
+> 该接口已弃用
 
 - 请求参数
 
